@@ -55,6 +55,28 @@ Set headers `X-SmsLab-Timestamp` to current UTC ISO-8601 time, `X-SmsLab-Message
 
 Run `python3 scripts/demo.py` after setting the two environment variables to exercise the complete local flow.
 
+## Reproduce the correctness experiment
+
+Use a **dedicated, disposable PostgreSQL database** and start the application against it on a local port. `scripts/research_experiment.py` creates synthetic accounts, sends baseline and concurrent duplicate requests, forces a payment to expire, and briefly installs a PostgreSQL trigger that rejects a credit-ledger write to test transaction rollback. It removes the trigger after that scenario. Do not run it against any shared or production database.
+
+```bash
+createdb smstxnlab_research
+export SMSLAB_DB_URL=jdbc:postgresql://127.0.0.1:5432/smstxnlab_research
+export SMSLAB_DB_USER="$(whoami)"
+export SMSLAB_GATEWAY_SECRET=replace-with-a-local-test-secret
+export SMSLAB_OPERATOR_KEY=replace-with-another-local-test-key
+./mvnw spring-boot:run -Dspring-boot.run.arguments=--server.port=18080
+```
+
+In another terminal with the same two test secrets:
+
+```bash
+python3 scripts/research_experiment.py --trials 3 --requests 10 --output experiments/results_10
+python3 scripts/research_experiment.py --trials 3 --requests 30 --output experiments/results_30
+```
+
+The script writes request-level CSV and JSON summaries. Its correctness assertions stop the run on a failed invariant. The latency figures describe local HTTP processing on one machine; they do not measure SMS-network delivery or a production deployment. `SMSLAB_RESEARCH_DB` may be set to a different dedicated database name.
+
 ## Evidence and provenance
 
 See [PROVENANCE.md](PROVENANCE.md) for the mapping from 2021 functions to this new implementation, and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) for the proposed evaluation. The code and baseline tests are engineering artifacts. Claims about throughput, security improvement, or field reliability require measured experiments and independent review.
