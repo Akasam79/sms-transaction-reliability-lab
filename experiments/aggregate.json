@@ -1,0 +1,102 @@
+[
+  {
+    "requests_per_scenario": 10,
+    "trials": 3,
+    "code_commit": "19bcb88342b2a56e1fa70702d66246f73ff3ba7f",
+    "all_trial_invariants_passed": true,
+    "scenarios": {
+      "baseline_pay": {
+        "requests": 30,
+        "http_200": 30,
+        "http_500": 0,
+        "latency_median_ms": 5.84,
+        "latency_p95_ms": 8.41
+      },
+      "baseline_confirm": {
+        "requests": 30,
+        "http_200": 30,
+        "http_500": 0,
+        "latency_median_ms": 303.41,
+        "latency_p95_ms": 307.38
+      },
+      "duplicate_pay": {
+        "requests": 30,
+        "http_200": 30,
+        "http_500": 0,
+        "latency_median_ms": 9.37,
+        "latency_p95_ms": 20.34
+      },
+      "competing_confirm": {
+        "requests": 30,
+        "http_200": 30,
+        "http_500": 0,
+        "latency_median_ms": 309.81,
+        "latency_p95_ms": 323.83
+      },
+      "expired_confirm": {
+        "requests": 3,
+        "http_200": 3,
+        "http_500": 0,
+        "latency_median_ms": 4.38,
+        "latency_p95_ms": 4.67
+      },
+      "injected_failure": {
+        "requests": 3,
+        "http_200": 0,
+        "http_500": 3,
+        "latency_median_ms": 309.65,
+        "latency_p95_ms": 313.11
+      }
+    }
+  },
+  {
+    "requests_per_scenario": 30,
+    "trials": 3,
+    "code_commit": "19bcb88342b2a56e1fa70702d66246f73ff3ba7f",
+    "all_trial_invariants_passed": true,
+    "scenarios": {
+      "baseline_pay": {
+        "requests": 90,
+        "http_200": 90,
+        "http_500": 0,
+        "latency_median_ms": 4.71,
+        "latency_p95_ms": 7.12
+      },
+      "baseline_confirm": {
+        "requests": 90,
+        "http_200": 90,
+        "http_500": 0,
+        "latency_median_ms": 301.79,
+        "latency_p95_ms": 306.21
+      },
+      "duplicate_pay": {
+        "requests": 90,
+        "http_200": 90,
+        "http_500": 0,
+        "latency_median_ms": 8.18,
+        "latency_p95_ms": 13.93
+      },
+      "competing_confirm": {
+        "requests": 90,
+        "http_200": 90,
+        "http_500": 0,
+        "latency_median_ms": 310.64,
+        "latency_p95_ms": 317.55
+      },
+      "expired_confirm": {
+        "requests": 3,
+        "http_200": 3,
+        "http_500": 0,
+        "latency_median_ms": 3.52,
+        "latency_p95_ms": 3.59
+      },
+      "injected_failure": {
+        "requests": 3,
+        "http_200": 0,
+        "http_500": 3,
+        "latency_median_ms": 302.74,
+        "latency_p95_ms": 302.81
+      }
+    }
+  }
+]

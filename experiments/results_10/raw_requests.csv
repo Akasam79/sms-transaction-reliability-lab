@@ -1,0 +1,127 @@
+trial,scenario,request,http_status,latency_ms,reply
+1,baseline_pay,0,200,8.41,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 319c11aa-e69b-4435-a36e-1cafaf8ae610 <6-digit-PIN> within 10 minutes, or CANCEL 319c11aa-e69b-4435-a36e-1cafaf8ae610."
+1,baseline_confirm,0,200,315.536,Payment completed: NGN 1.00. Reference 319c11aa-e69b-4435-a36e-1cafaf8ae610.
+1,baseline_pay,1,200,6.489,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 192046f7-d1ba-4b79-b3e7-72406787340a <6-digit-PIN> within 10 minutes, or CANCEL 192046f7-d1ba-4b79-b3e7-72406787340a."
+1,baseline_confirm,1,200,304.724,Payment completed: NGN 1.00. Reference 192046f7-d1ba-4b79-b3e7-72406787340a.
+1,baseline_pay,2,200,5.679,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 707d99b2-5c94-4ec1-ada9-d9f526ac1e87 <6-digit-PIN> within 10 minutes, or CANCEL 707d99b2-5c94-4ec1-ada9-d9f526ac1e87."
+1,baseline_confirm,2,200,301.729,Payment completed: NGN 1.00. Reference 707d99b2-5c94-4ec1-ada9-d9f526ac1e87.
+1,baseline_pay,3,200,4.928,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 5acc7193-a1d7-4f4f-9014-552347a7881d <6-digit-PIN> within 10 minutes, or CANCEL 5acc7193-a1d7-4f4f-9014-552347a7881d."
+1,baseline_confirm,3,200,301.894,Payment completed: NGN 1.00. Reference 5acc7193-a1d7-4f4f-9014-552347a7881d.
+1,baseline_pay,4,200,6.389,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM fed224ba-55c3-4bfa-a437-40afd9291b0e <6-digit-PIN> within 10 minutes, or CANCEL fed224ba-55c3-4bfa-a437-40afd9291b0e."
+1,baseline_confirm,4,200,303.679,Payment completed: NGN 1.00. Reference fed224ba-55c3-4bfa-a437-40afd9291b0e.
+1,baseline_pay,5,200,6.46,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 86ab8956-f8eb-4b03-ba86-5909650a0d97 <6-digit-PIN> within 10 minutes, or CANCEL 86ab8956-f8eb-4b03-ba86-5909650a0d97."
+1,baseline_confirm,5,200,303.14,Payment completed: NGN 1.00. Reference 86ab8956-f8eb-4b03-ba86-5909650a0d97.
+1,baseline_pay,6,200,4.009,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM c76fefe9-9dd5-46bd-a6ce-395bed76b5a2 <6-digit-PIN> within 10 minutes, or CANCEL c76fefe9-9dd5-46bd-a6ce-395bed76b5a2."
+1,baseline_confirm,6,200,300.654,Payment completed: NGN 1.00. Reference c76fefe9-9dd5-46bd-a6ce-395bed76b5a2.
+1,baseline_pay,7,200,4.307,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 7250fc77-a42b-47d0-861c-4050c35e15ae <6-digit-PIN> within 10 minutes, or CANCEL 7250fc77-a42b-47d0-861c-4050c35e15ae."
+1,baseline_confirm,7,200,305.324,Payment completed: NGN 1.00. Reference 7250fc77-a42b-47d0-861c-4050c35e15ae.
+1,baseline_pay,8,200,4.756,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 2a2e01f0-6a30-40f0-8d99-9d5c12e46399 <6-digit-PIN> within 10 minutes, or CANCEL 2a2e01f0-6a30-40f0-8d99-9d5c12e46399."
+1,baseline_confirm,8,200,300.907,Payment completed: NGN 1.00. Reference 2a2e01f0-6a30-40f0-8d99-9d5c12e46399.
+1,baseline_pay,9,200,5.067,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 353f8b15-7a5b-42dd-a9cb-0fde8a2f22d9 <6-digit-PIN> within 10 minutes, or CANCEL 353f8b15-7a5b-42dd-a9cb-0fde8a2f22d9."
+1,baseline_confirm,9,200,302.628,Payment completed: NGN 1.00. Reference 353f8b15-7a5b-42dd-a9cb-0fde8a2f22d9.
+1,duplicate_pay,0,200,11.676,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 31a0ce71-0051-4311-b262-97a9a60e728a <6-digit-PIN> within 10 minutes, or CANCEL 31a0ce71-0051-4311-b262-97a9a60e728a."
+1,duplicate_pay,1,200,9.504,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 31a0ce71-0051-4311-b262-97a9a60e728a <6-digit-PIN> within 10 minutes, or CANCEL 31a0ce71-0051-4311-b262-97a9a60e728a."
+1,duplicate_pay,2,200,13.216,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 31a0ce71-0051-4311-b262-97a9a60e728a <6-digit-PIN> within 10 minutes, or CANCEL 31a0ce71-0051-4311-b262-97a9a60e728a."
+1,duplicate_pay,3,200,14.412,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 31a0ce71-0051-4311-b262-97a9a60e728a <6-digit-PIN> within 10 minutes, or CANCEL 31a0ce71-0051-4311-b262-97a9a60e728a."
+1,duplicate_pay,4,200,16.211,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 31a0ce71-0051-4311-b262-97a9a60e728a <6-digit-PIN> within 10 minutes, or CANCEL 31a0ce71-0051-4311-b262-97a9a60e728a."
+1,duplicate_pay,5,200,18.924,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 31a0ce71-0051-4311-b262-97a9a60e728a <6-digit-PIN> within 10 minutes, or CANCEL 31a0ce71-0051-4311-b262-97a9a60e728a."
+1,duplicate_pay,6,200,20.338,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 31a0ce71-0051-4311-b262-97a9a60e728a <6-digit-PIN> within 10 minutes, or CANCEL 31a0ce71-0051-4311-b262-97a9a60e728a."
+1,duplicate_pay,7,200,17.245,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 31a0ce71-0051-4311-b262-97a9a60e728a <6-digit-PIN> within 10 minutes, or CANCEL 31a0ce71-0051-4311-b262-97a9a60e728a."
+1,duplicate_pay,8,200,20.795,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 31a0ce71-0051-4311-b262-97a9a60e728a <6-digit-PIN> within 10 minutes, or CANCEL 31a0ce71-0051-4311-b262-97a9a60e728a."
+1,duplicate_pay,9,200,18.746,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 31a0ce71-0051-4311-b262-97a9a60e728a <6-digit-PIN> within 10 minutes, or CANCEL 31a0ce71-0051-4311-b262-97a9a60e728a."
+1,competing_confirm,0,200,308.544,Payment completed: NGN 2.00. Reference 31a0ce71-0051-4311-b262-97a9a60e728a.
+1,competing_confirm,1,200,313.936,Payment already completed; no second debit was made.
+1,competing_confirm,2,200,310.379,Payment already completed; no second debit was made.
+1,competing_confirm,3,200,321.077,Payment already completed; no second debit was made.
+1,competing_confirm,4,200,317.223,Payment already completed; no second debit was made.
+1,competing_confirm,5,200,323.644,Payment already completed; no second debit was made.
+1,competing_confirm,6,200,325.444,Payment already completed; no second debit was made.
+1,competing_confirm,7,200,323.835,Payment already completed; no second debit was made.
+1,competing_confirm,8,200,314.411,Payment already completed; no second debit was made.
+1,competing_confirm,9,200,317.865,Payment already completed; no second debit was made.
+1,expired_confirm,0,200,4.383,Payment expired. Start again with PAY.
+1,injected_failure,0,500,313.114,Internal Server Error
+2,baseline_pay,0,200,6.688,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 129ffaa9-a339-4834-b341-05033c310361 <6-digit-PIN> within 10 minutes, or CANCEL 129ffaa9-a339-4834-b341-05033c310361."
+2,baseline_confirm,0,200,305.739,Payment completed: NGN 1.00. Reference 129ffaa9-a339-4834-b341-05033c310361.
+2,baseline_pay,1,200,6.194,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 8abde645-450a-4269-b704-50a5db662230 <6-digit-PIN> within 10 minutes, or CANCEL 8abde645-450a-4269-b704-50a5db662230."
+2,baseline_confirm,1,200,303.788,Payment completed: NGN 1.00. Reference 8abde645-450a-4269-b704-50a5db662230.
+2,baseline_pay,2,200,6.07,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM fab59270-8336-44d2-862b-c58900e68e9d <6-digit-PIN> within 10 minutes, or CANCEL fab59270-8336-44d2-862b-c58900e68e9d."
+2,baseline_confirm,2,200,307.382,Payment completed: NGN 1.00. Reference fab59270-8336-44d2-862b-c58900e68e9d.
+2,baseline_pay,3,200,5.809,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 399345fa-1821-4d8b-9761-dd2fbad638e9 <6-digit-PIN> within 10 minutes, or CANCEL 399345fa-1821-4d8b-9761-dd2fbad638e9."
+2,baseline_confirm,3,200,304.213,Payment completed: NGN 1.00. Reference 399345fa-1821-4d8b-9761-dd2fbad638e9.
+2,baseline_pay,4,200,6.641,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM c4f27548-6c43-4e36-a5ed-5bec63e33565 <6-digit-PIN> within 10 minutes, or CANCEL c4f27548-6c43-4e36-a5ed-5bec63e33565."
+2,baseline_confirm,4,200,303.851,Payment completed: NGN 1.00. Reference c4f27548-6c43-4e36-a5ed-5bec63e33565.
+2,baseline_pay,5,200,5.791,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 8ccdb3a2-c82c-4c5c-a0fb-7c8015a293b7 <6-digit-PIN> within 10 minutes, or CANCEL 8ccdb3a2-c82c-4c5c-a0fb-7c8015a293b7."
+2,baseline_confirm,5,200,304.943,Payment completed: NGN 1.00. Reference 8ccdb3a2-c82c-4c5c-a0fb-7c8015a293b7.
+2,baseline_pay,6,200,5.237,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 45a99254-f85a-4d1f-89d4-5001b773725b <6-digit-PIN> within 10 minutes, or CANCEL 45a99254-f85a-4d1f-89d4-5001b773725b."
+2,baseline_confirm,6,200,300.894,Payment completed: NGN 1.00. Reference 45a99254-f85a-4d1f-89d4-5001b773725b.
+2,baseline_pay,7,200,8.618,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM ef383577-0be1-456c-87d2-d6aa83c05241 <6-digit-PIN> within 10 minutes, or CANCEL ef383577-0be1-456c-87d2-d6aa83c05241."
+2,baseline_confirm,7,200,301.292,Payment completed: NGN 1.00. Reference ef383577-0be1-456c-87d2-d6aa83c05241.
+2,baseline_pay,8,200,6.908,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 66c52ba7-55d5-422a-959b-46e87c136609 <6-digit-PIN> within 10 minutes, or CANCEL 66c52ba7-55d5-422a-959b-46e87c136609."
+2,baseline_confirm,8,200,302.646,Payment completed: NGN 1.00. Reference 66c52ba7-55d5-422a-959b-46e87c136609.
+2,baseline_pay,9,200,4.99,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 7041d6cf-9a8a-4b4b-8ce0-806ad493f7fa <6-digit-PIN> within 10 minutes, or CANCEL 7041d6cf-9a8a-4b4b-8ce0-806ad493f7fa."
+2,baseline_confirm,9,200,302.124,Payment completed: NGN 1.00. Reference 7041d6cf-9a8a-4b4b-8ce0-806ad493f7fa.
+2,duplicate_pay,0,200,7.905,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 050ab56b-a713-4fba-b369-bdb90b9a1aea <6-digit-PIN> within 10 minutes, or CANCEL 050ab56b-a713-4fba-b369-bdb90b9a1aea."
+2,duplicate_pay,1,200,7.152,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 050ab56b-a713-4fba-b369-bdb90b9a1aea <6-digit-PIN> within 10 minutes, or CANCEL 050ab56b-a713-4fba-b369-bdb90b9a1aea."
+2,duplicate_pay,2,200,10.314,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 050ab56b-a713-4fba-b369-bdb90b9a1aea <6-digit-PIN> within 10 minutes, or CANCEL 050ab56b-a713-4fba-b369-bdb90b9a1aea."
+2,duplicate_pay,3,200,6.667,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 050ab56b-a713-4fba-b369-bdb90b9a1aea <6-digit-PIN> within 10 minutes, or CANCEL 050ab56b-a713-4fba-b369-bdb90b9a1aea."
+2,duplicate_pay,4,200,8.409,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 050ab56b-a713-4fba-b369-bdb90b9a1aea <6-digit-PIN> within 10 minutes, or CANCEL 050ab56b-a713-4fba-b369-bdb90b9a1aea."
+2,duplicate_pay,5,200,7.709,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 050ab56b-a713-4fba-b369-bdb90b9a1aea <6-digit-PIN> within 10 minutes, or CANCEL 050ab56b-a713-4fba-b369-bdb90b9a1aea."
+2,duplicate_pay,6,200,6.838,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 050ab56b-a713-4fba-b369-bdb90b9a1aea <6-digit-PIN> within 10 minutes, or CANCEL 050ab56b-a713-4fba-b369-bdb90b9a1aea."
+2,duplicate_pay,7,200,11.214,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 050ab56b-a713-4fba-b369-bdb90b9a1aea <6-digit-PIN> within 10 minutes, or CANCEL 050ab56b-a713-4fba-b369-bdb90b9a1aea."
+2,duplicate_pay,8,200,7.866,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 050ab56b-a713-4fba-b369-bdb90b9a1aea <6-digit-PIN> within 10 minutes, or CANCEL 050ab56b-a713-4fba-b369-bdb90b9a1aea."
+2,duplicate_pay,9,200,8.175,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 050ab56b-a713-4fba-b369-bdb90b9a1aea <6-digit-PIN> within 10 minutes, or CANCEL 050ab56b-a713-4fba-b369-bdb90b9a1aea."
+2,competing_confirm,0,200,308.413,Payment already completed; no second debit was made.
+2,competing_confirm,1,200,305.643,Payment completed: NGN 2.00. Reference 050ab56b-a713-4fba-b369-bdb90b9a1aea.
+2,competing_confirm,2,200,309.234,Payment already completed; no second debit was made.
+2,competing_confirm,3,200,306.536,Payment already completed; no second debit was made.
+2,competing_confirm,4,200,309.956,Payment already completed; no second debit was made.
+2,competing_confirm,5,200,314.942,Payment already completed; no second debit was made.
+2,competing_confirm,6,200,312.252,Payment already completed; no second debit was made.
+2,competing_confirm,7,200,310.671,Payment already completed; no second debit was made.
+2,competing_confirm,8,200,309.817,Payment already completed; no second debit was made.
+2,competing_confirm,9,200,312.257,Payment already completed; no second debit was made.
+2,expired_confirm,0,200,4.666,Payment expired. Start again with PAY.
+2,injected_failure,0,500,309.647,Internal Server Error
+3,baseline_pay,0,200,4.684,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM f9772b0e-7daf-4632-9c2b-146f9dde71ee <6-digit-PIN> within 10 minutes, or CANCEL f9772b0e-7daf-4632-9c2b-146f9dde71ee."
+3,baseline_confirm,0,200,305.94,Payment completed: NGN 1.00. Reference f9772b0e-7daf-4632-9c2b-146f9dde71ee.
+3,baseline_pay,1,200,6.137,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 23dc9dda-a744-42c9-8aea-fc4f91b8e9e6 <6-digit-PIN> within 10 minutes, or CANCEL 23dc9dda-a744-42c9-8aea-fc4f91b8e9e6."
+3,baseline_confirm,1,200,301.676,Payment completed: NGN 1.00. Reference 23dc9dda-a744-42c9-8aea-fc4f91b8e9e6.
+3,baseline_pay,2,200,6.141,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 09b00789-fc94-4cd7-992d-0cb252db7628 <6-digit-PIN> within 10 minutes, or CANCEL 09b00789-fc94-4cd7-992d-0cb252db7628."
+3,baseline_confirm,2,200,305.655,Payment completed: NGN 1.00. Reference 09b00789-fc94-4cd7-992d-0cb252db7628.
+3,baseline_pay,3,200,5.657,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 2df267fb-e9b2-4471-b282-24e52574bc2d <6-digit-PIN> within 10 minutes, or CANCEL 2df267fb-e9b2-4471-b282-24e52574bc2d."
+3,baseline_confirm,3,200,306.304,Payment completed: NGN 1.00. Reference 2df267fb-e9b2-4471-b282-24e52574bc2d.
+3,baseline_pay,4,200,5.869,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM dccb522f-08eb-493e-b9e9-ceef7ecc41b3 <6-digit-PIN> within 10 minutes, or CANCEL dccb522f-08eb-493e-b9e9-ceef7ecc41b3."
+3,baseline_confirm,4,200,302.31,Payment completed: NGN 1.00. Reference dccb522f-08eb-493e-b9e9-ceef7ecc41b3.
+3,baseline_pay,5,200,5.401,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 7c4dd712-d945-4dfb-9f7e-aff40fc2b37a <6-digit-PIN> within 10 minutes, or CANCEL 7c4dd712-d945-4dfb-9f7e-aff40fc2b37a."
+3,baseline_confirm,5,200,305.732,Payment completed: NGN 1.00. Reference 7c4dd712-d945-4dfb-9f7e-aff40fc2b37a.
+3,baseline_pay,6,200,5.359,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 32ee730c-5d98-45ca-8d2e-f437fa9192ad <6-digit-PIN> within 10 minutes, or CANCEL 32ee730c-5d98-45ca-8d2e-f437fa9192ad."
+3,baseline_confirm,6,200,303.132,Payment completed: NGN 1.00. Reference 32ee730c-5d98-45ca-8d2e-f437fa9192ad.
+3,baseline_pay,7,200,5.904,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 4dea1e3f-0de8-45a2-bcc1-a35832f1153d <6-digit-PIN> within 10 minutes, or CANCEL 4dea1e3f-0de8-45a2-bcc1-a35832f1153d."
+3,baseline_confirm,7,200,301.816,Payment completed: NGN 1.00. Reference 4dea1e3f-0de8-45a2-bcc1-a35832f1153d.
+3,baseline_pay,8,200,5.643,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 5d852db8-7620-4059-973c-25f8902ad36f <6-digit-PIN> within 10 minutes, or CANCEL 5d852db8-7620-4059-973c-25f8902ad36f."
+3,baseline_confirm,8,200,304.619,Payment completed: NGN 1.00. Reference 5d852db8-7620-4059-973c-25f8902ad36f.
+3,baseline_pay,9,200,6.851,"Pay Synthetic Merchant NGN 1.00? Reply CONFIRM 585a03b3-0310-45f9-a7dc-d9336c6a1689 <6-digit-PIN> within 10 minutes, or CANCEL 585a03b3-0310-45f9-a7dc-d9336c6a1689."
+3,baseline_confirm,9,200,302.491,Payment completed: NGN 1.00. Reference 585a03b3-0310-45f9-a7dc-d9336c6a1689.
+3,duplicate_pay,0,200,9.213,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 3cc4e06f-d7d2-4aff-82be-5b2d067589f5 <6-digit-PIN> within 10 minutes, or CANCEL 3cc4e06f-d7d2-4aff-82be-5b2d067589f5."
+3,duplicate_pay,1,200,8.22,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 3cc4e06f-d7d2-4aff-82be-5b2d067589f5 <6-digit-PIN> within 10 minutes, or CANCEL 3cc4e06f-d7d2-4aff-82be-5b2d067589f5."
+3,duplicate_pay,2,200,9.112,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 3cc4e06f-d7d2-4aff-82be-5b2d067589f5 <6-digit-PIN> within 10 minutes, or CANCEL 3cc4e06f-d7d2-4aff-82be-5b2d067589f5."
+3,duplicate_pay,3,200,11.257,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 3cc4e06f-d7d2-4aff-82be-5b2d067589f5 <6-digit-PIN> within 10 minutes, or CANCEL 3cc4e06f-d7d2-4aff-82be-5b2d067589f5."
+3,duplicate_pay,4,200,9.238,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 3cc4e06f-d7d2-4aff-82be-5b2d067589f5 <6-digit-PIN> within 10 minutes, or CANCEL 3cc4e06f-d7d2-4aff-82be-5b2d067589f5."
+3,duplicate_pay,5,200,9.961,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 3cc4e06f-d7d2-4aff-82be-5b2d067589f5 <6-digit-PIN> within 10 minutes, or CANCEL 3cc4e06f-d7d2-4aff-82be-5b2d067589f5."
+3,duplicate_pay,6,200,7.267,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 3cc4e06f-d7d2-4aff-82be-5b2d067589f5 <6-digit-PIN> within 10 minutes, or CANCEL 3cc4e06f-d7d2-4aff-82be-5b2d067589f5."
+3,duplicate_pay,7,200,9.53,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 3cc4e06f-d7d2-4aff-82be-5b2d067589f5 <6-digit-PIN> within 10 minutes, or CANCEL 3cc4e06f-d7d2-4aff-82be-5b2d067589f5."
+3,duplicate_pay,8,200,6.081,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 3cc4e06f-d7d2-4aff-82be-5b2d067589f5 <6-digit-PIN> within 10 minutes, or CANCEL 3cc4e06f-d7d2-4aff-82be-5b2d067589f5."
+3,duplicate_pay,9,200,5.415,"Pay Synthetic Merchant NGN 2.00? Reply CONFIRM 3cc4e06f-d7d2-4aff-82be-5b2d067589f5 <6-digit-PIN> within 10 minutes, or CANCEL 3cc4e06f-d7d2-4aff-82be-5b2d067589f5."
+3,competing_confirm,0,200,309.055,Payment already completed; no second debit was made.
+3,competing_confirm,1,200,308.783,Payment already completed; no second debit was made.
+3,competing_confirm,2,200,305.964,Payment already completed; no second debit was made.
+3,competing_confirm,3,200,306.407,Payment already completed; no second debit was made.
+3,competing_confirm,4,200,305.084,Payment completed: NGN 2.00. Reference 3cc4e06f-d7d2-4aff-82be-5b2d067589f5.
+3,competing_confirm,5,200,306.707,Payment already completed; no second debit was made.
+3,competing_confirm,6,200,308.952,Payment already completed; no second debit was made.
+3,competing_confirm,7,200,309.616,Payment already completed; no second debit was made.
+3,competing_confirm,8,200,309.807,Payment already completed; no second debit was made.
+3,competing_confirm,9,200,308.474,Payment already completed; no second debit was made.
+3,expired_confirm,0,200,4.211,Payment expired. Start again with PAY.
+3,injected_failure,0,500,308.105,Internal Server Error

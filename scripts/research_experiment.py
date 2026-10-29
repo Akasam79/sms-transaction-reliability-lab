@@ -205,7 +205,7 @@ def main():
     rows = []
     summaries = [run_trial(i + 1, args.requests, rows) for i in range(args.trials)]
     with (args.output / "raw_requests.csv").open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     metadata = {"date_utc": datetime.now(timezone.utc).isoformat(), "database": DATABASE,

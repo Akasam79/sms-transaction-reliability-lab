@@ -1,0 +1,49 @@
+{
+  "date_utc": "2026-10-29T18:30:39.489942+00:00",
+  "database": "smstxnlab_research",
+  "postgresql": "PostgreSQL 18.4 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+  "python": "3.9.6",
+  "operating_system": "Darwin 27.0.0",
+  "machine_architecture": "arm64",
+  "logical_cpus": 10,
+  "java": "openjdk version \"26.0.1\" 2026-04-21",
+  "git_commit": "19bcb88342b2a56e1fa70702d66246f73ff3ba7f",
+  "trials": 3,
+  "requests_per_scenario": 10,
+  "note": "Synthetic accounts and balances; local HTTP and PostgreSQL; no real SMS or money.",
+  "summaries": [
+    {
+      "trial": 1,
+      "baseline_settled": 10,
+      "duplicate_delivery_count": 10,
+      "competing_confirmation_count": 10,
+      "duplicate_settlements": 0,
+      "expired_without_settlement": true,
+      "rollback_preserved_balances": true,
+      "final_customer_minor": 9998800,
+      "final_merchant_minor": 1200
+    },
+    {
+      "trial": 2,
+      "baseline_settled": 10,
+      "duplicate_delivery_count": 10,
+      "competing_confirmation_count": 10,
+      "duplicate_settlements": 0,
+      "expired_without_settlement": true,
+      "rollback_preserved_balances": true,
+      "final_customer_minor": 9998800,
+      "final_merchant_minor": 1200
+    },
+    {
+      "trial": 3,
+      "baseline_settled": 10,
+      "duplicate_delivery_count": 10,
+      "competing_confirmation_count": 10,
+      "duplicate_settlements": 0,
+      "expired_without_settlement": true,
+      "rollback_preserved_balances": true,
+      "final_customer_minor": 9998800,
+      "final_merchant_minor": 1200
+    }
+  ]
+}
