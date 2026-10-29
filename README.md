@@ -79,4 +79,6 @@ The script writes request-level CSV and JSON summaries. Its correctness assertio
 
 ## Evidence and provenance
 
-See [PROVENANCE.md](PROVENANCE.md) for the mapping from 2021 functions to this new implementation, and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) for the proposed evaluation. The code and baseline tests are engineering artifacts. Claims about throughput, security improvement, or field reliability require measured experiments and independent review.
+The sole-authored [technical report](paper/SMS_Transaction_Correctness_Synthetic_Fault_Study_2026.pdf) describes the completed synthetic correctness study. Its [aggregate summary](experiments/aggregate.json), request-level CSV files in `experiments/`, and the experiment scripts in `scripts/` are available for inspection. Across six bounded local trials, 120 baseline payments settled, repeated `PAY` requests created six unique intents, competing confirmations settled those intents once each, and the expiry and injected-failure cases left no transfer entries. These observations do not establish real SMS delivery, production security, or general performance.
+
+See [PROVENANCE.md](PROVENANCE.md) for the mapping from 2021 functions to this new implementation and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) for the completed pilot and further experiments. The technical report is not peer reviewed.
