@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: keenpay
+  datasource:
+    url: ${KEENPAY_DB_URL:jdbc:h2:mem:keenpay;DB_CLOSE_DELAY=-1}
+    username: ${KEENPAY_DB_USER:sa}
+    password: ${KEENPAY_DB_PASSWORD:}
+  flyway:
+    enabled: true
+  h2:
+    console:
+      enabled: false
+server:
+  address: ${KEENPAY_BIND_ADDRESS:127.0.0.1}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+keenpay:
+  gateway-secret: ${KEENPAY_GATEWAY_SECRET:}
+  operator-key: ${KEENPAY_OPERATOR_KEY:}
+  pending-minutes: 10

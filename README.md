@@ -1,0 +1,60 @@
+# KeenPay: SMS wallet research prototype
+
+This is a new Spring Boot implementation of the central idea in Samuel Chukwuebuka Akabuike's 2021 FUTO project, *Development of an Improved Internet Independent SMS-Based Payment Platform*. It is **not** the 2021 code ported unchanged, a real-money payment service, a deployed SMS gateway, or a peer-reviewed result. The original NetBeans/JAX-RS code is archived separately at [Akasam79/KeenPay](https://github.com/Akasam79/KeenPay).
+
+The handset can issue SMS-style commands without mobile data. The gateway and backend still require connectivity. This repository provides a signed HTTP gateway simulator so the payment state machine can be tested reproducibly before any real SMS provider is integrated.
+
+## Implemented flows
+
+- Operator-provisioned customer and merchant accounts, with a six-digit PIN hashed using bcrypt. Merchants receive a deterministic short code.
+- Simulated wallet funding, capped at NGN 1,000,000 per operation. No real deposits or withdrawals.
+- `PAY <merchant-code> <whole-naira-amount>` creates a pending payment with a ten-minute expiry.
+- `CONFIRM <payment-UUID> <PIN>` transfers funds atomically and writes balanced debit/credit ledger entries.
+- `BALANCE <PIN>`, `RESET <old-PIN> <new-PIN>`, and `CANCEL <payment-UUID>`.
+- Gateway HMAC verification, five-minute timestamp window, and message-ID idempotency for duplicate delivery.
+- PIN retry lockout after five failures for fifteen minutes, input validation, integer minor units, and database constraints.
+
+**Security boundary:** SMS is not an encrypted channel, and this prototype still uses PINs in SMS commands to preserve the historical interaction. It must only be used with invented accounts and simulated balances. The gateway secret authenticates the HTTP simulator, not the handset or the SMS network. The operator endpoints are for controlled experiments and must never be publicly exposed. See [SECURITY.md](SECURITY.md).
+
+## Open in IntelliJ IDEA
+
+Open this folder as a Maven project. Use JDK 21 or newer. Spring Boot version is pinned in `pom.xml`. Configure these environment variables in the run configuration:
+
+```text
+KEENPAY_GATEWAY_SECRET=<a long random test secret>
+KEENPAY_OPERATOR_KEY=<a separate long random test key>
+```
+
+The default H2 database is in memory and clears at restart. Run `KeenPayApplication` in IntelliJ, or run `./mvnw spring-boot:run`. Visit `http://localhost:8080/actuator/health` for a health check. No secrets are committed to the project.
+
+For a persistent PostgreSQL experiment, set `KEENPAY_DB_URL`, `KEENPAY_DB_USER`, and `KEENPAY_DB_PASSWORD`. Flyway creates the schema. Treat PostgreSQL as a research database, not a production payment ledger.
+
+## HTTP contract
+
+Operator requests require `X-KeenPay-Operator-Key`:
+
+```json
+POST /api/v1/simulation/accounts
+{"phone":"+2348012345678","role":"CUSTOMER","name":"Ada Example","pin":"123456"}
+```
+
+Use `role: "MERCHANT"` for a merchant; the response includes its short code. Fund a simulated account with:
+
+```json
+POST /api/v1/simulation/fund
+{"phone":"+2348012345678","amountNaira":100}
+```
+
+Gateway delivery is `POST /api/v1/sms/inbound` with raw JSON body:
+
+```json
+{"phone":"+2348012345678","sms":"PAY M0000002 40"}
+```
+
+Set headers `X-KeenPay-Timestamp` to current UTC ISO-8601 time, `X-KeenPay-Message-Id` to a unique ID, and `X-KeenPay-Signature` to lowercase hex HMAC-SHA256 of `timestamp + "." + messageId + "." + rawBody`, using `KEENPAY_GATEWAY_SECRET`. A repeated message ID with identical content returns the original reply without executing the command again. Reuse with changed content is rejected.
+
+Run `python3 scripts/demo.py` after setting the two environment variables to exercise the complete local flow.
+
+## Evidence and provenance
+
+See [PROVENANCE.md](PROVENANCE.md) for the mapping from 2021 functions to this new implementation, and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) for the proposed evaluation. The code and baseline tests are engineering artifacts. Claims about throughput, security improvement, or field reliability require measured experiments and independent review.
