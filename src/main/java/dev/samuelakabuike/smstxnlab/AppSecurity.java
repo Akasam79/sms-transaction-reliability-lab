@@ -1,4 +1,4 @@
-package dev.samuelakabuike.keenpay;
+package dev.samuelakabuike.smstxnlab;
 
 import java.time.Clock;
 

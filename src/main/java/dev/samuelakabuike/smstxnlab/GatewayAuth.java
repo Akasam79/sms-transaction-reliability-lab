@@ -1,4 +1,4 @@
-package dev.samuelakabuike.keenpay;
+package dev.samuelakabuike.smstxnlab;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -20,8 +20,8 @@ public class GatewayAuth {
     private final String operatorKey;
     private final Clock clock;
 
-    public GatewayAuth(@Value("${keenpay.gateway-secret:}") String gatewaySecret,
-                       @Value("${keenpay.operator-key:}") String operatorKey, Clock clock) {
+    public GatewayAuth(@Value("${smstxnlab.gateway-secret:}") String gatewaySecret,
+                       @Value("${smstxnlab.operator-key:}") String operatorKey, Clock clock) {
         this.gatewaySecret = gatewaySecret;
         this.operatorKey = operatorKey;
         this.clock = clock;

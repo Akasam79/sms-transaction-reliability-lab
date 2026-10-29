@@ -1,6 +1,6 @@
-# KeenPay: SMS wallet research prototype
+# SmsTransactionLab: SMS wallet research prototype
 
-This is a new Spring Boot implementation of the central idea in Samuel Chukwuebuka Akabuike's 2021 FUTO project, *Development of an Improved Internet Independent SMS-Based Payment Platform*. It is **not** the 2021 code ported unchanged, a real-money payment service, a deployed SMS gateway, or a peer-reviewed result. The original NetBeans/JAX-RS code is archived separately at [Akasam79/KeenPay](https://github.com/Akasam79/KeenPay).
+This is a new Spring Boot implementation of the central idea in Samuel Chukwuebuka Akabuike's 2021 FUTO project, *Development of an Improved Internet Independent SMS-Based Payment Platform*. It is **not** the 2021 code ported unchanged, a real-money payment service, a deployed SMS gateway, or a peer-reviewed result. The [2021 project selections and 2026 technical note](https://doi.org/10.5281/zenodo.23766609) are available on Zenodo. The original NetBeans/JAX-RS code is archived separately at [Akasam79/KeenPay](https://github.com/Akasam79/KeenPay).
 
 The handset can issue SMS-style commands without mobile data. The gateway and backend still require connectivity. This repository provides a signed HTTP gateway simulator so the payment state machine can be tested reproducibly before any real SMS provider is integrated.
 
@@ -21,17 +21,17 @@ The handset can issue SMS-style commands without mobile data. The gateway and ba
 Open this folder as a Maven project. Use JDK 21 or newer. Spring Boot version is pinned in `pom.xml`. Configure these environment variables in the run configuration:
 
 ```text
-KEENPAY_GATEWAY_SECRET=<a long random test secret>
-KEENPAY_OPERATOR_KEY=<a separate long random test key>
+SMSLAB_GATEWAY_SECRET=<a long random test secret>
+SMSLAB_OPERATOR_KEY=<a separate long random test key>
 ```
 
-The default H2 database is in memory and clears at restart. Run `KeenPayApplication` in IntelliJ, or run `./mvnw spring-boot:run`. Visit `http://localhost:8080/actuator/health` for a health check. No secrets are committed to the project.
+The default H2 database is in memory and clears at restart. Run `SmsTransactionLabApplication` in IntelliJ, or run `./mvnw spring-boot:run`. Visit `http://localhost:8080/actuator/health` for a health check. No secrets are committed to the project.
 
-For a persistent PostgreSQL experiment, set `KEENPAY_DB_URL`, `KEENPAY_DB_USER`, and `KEENPAY_DB_PASSWORD`. Flyway creates the schema. Treat PostgreSQL as a research database, not a production payment ledger.
+For a persistent PostgreSQL experiment, set `SMSLAB_DB_URL`, `SMSLAB_DB_USER`, and `SMSLAB_DB_PASSWORD`. Flyway creates the schema. Treat PostgreSQL as a research database, not a production payment ledger.
 
 ## HTTP contract
 
-Operator requests require `X-KeenPay-Operator-Key`:
+Operator requests require `X-SmsLab-Operator-Key`:
 
 ```json
 POST /api/v1/simulation/accounts
@@ -51,7 +51,7 @@ Gateway delivery is `POST /api/v1/sms/inbound` with raw JSON body:
 {"phone":"+2348012345678","sms":"PAY M0000002 40"}
 ```
 
-Set headers `X-KeenPay-Timestamp` to current UTC ISO-8601 time, `X-KeenPay-Message-Id` to a unique ID, and `X-KeenPay-Signature` to lowercase hex HMAC-SHA256 of `timestamp + "." + messageId + "." + rawBody`, using `KEENPAY_GATEWAY_SECRET`. A repeated message ID with identical content returns the original reply without executing the command again. Reuse with changed content is rejected.
+Set headers `X-SmsLab-Timestamp` to current UTC ISO-8601 time, `X-SmsLab-Message-Id` to a unique ID, and `X-SmsLab-Signature` to lowercase hex HMAC-SHA256 of `timestamp + "." + messageId + "." + rawBody`, using `SMSLAB_GATEWAY_SECRET`. A repeated message ID with identical content returns the original reply without executing the command again. Reuse with changed content is rejected.
 
 Run `python3 scripts/demo.py` after setting the two environment variables to exercise the complete local flow.
 

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.samuelakabuike</groupId>
-	<artifactId>keenpay</artifactId>
+	<artifactId>smstxnlab</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>KeenPay</name>
+	<name>SmsTransactionLab</name>
 	<description>SMS wallet research prototype</description>
 	<url/>
 	<licenses>

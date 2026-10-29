@@ -8,9 +8,9 @@ import urllib.request
 import uuid
 from datetime import datetime, timezone
 
-BASE = os.getenv("KEENPAY_BASE_URL", "http://localhost:8080")
-OPERATOR = os.environ["KEENPAY_OPERATOR_KEY"]
-GATEWAY = os.environ["KEENPAY_GATEWAY_SECRET"]
+BASE = os.getenv("SMSLAB_BASE_URL", "http://localhost:8080")
+OPERATOR = os.environ["SMSLAB_OPERATOR_KEY"]
+GATEWAY = os.environ["SMSLAB_GATEWAY_SECRET"]
 
 
 def post(path, payload, headers):
@@ -26,14 +26,14 @@ def sms(phone, command):
     timestamp = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     message_id = str(uuid.uuid4())
     signature = hmac.new(GATEWAY.encode(), timestamp.encode() + b"." + message_id.encode() + b"." + raw, hashlib.sha256).hexdigest()
-    return post("/api/v1/sms/inbound", payload, {"X-KeenPay-Timestamp": timestamp,
-        "X-KeenPay-Message-Id": message_id, "X-KeenPay-Signature": signature})["reply"]
+    return post("/api/v1/sms/inbound", payload, {"X-SmsLab-Timestamp": timestamp,
+        "X-SmsLab-Message-Id": message_id, "X-SmsLab-Signature": signature})["reply"]
 
 
 suffix = str(int(time.time()))[-8:]
 customer = "+23480" + suffix
 merchant = "+23481" + suffix
-headers = {"X-KeenPay-Operator-Key": OPERATOR}
+headers = {"X-SmsLab-Operator-Key": OPERATOR}
 post("/api/v1/simulation/accounts", {"phone": customer, "role": "CUSTOMER", "name": "Ada Example", "pin": "123456"}, headers)
 shop = post("/api/v1/simulation/accounts", {"phone": merchant, "role": "MERCHANT", "name": "Demo Shop", "pin": "654321"}, headers)
 post("/api/v1/simulation/fund", {"phone": customer, "amountNaira": 100}, headers)

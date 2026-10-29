@@ -1,23 +1,23 @@
 spring:
   application:
-    name: keenpay
+    name: smstxnlab
   datasource:
-    url: ${KEENPAY_DB_URL:jdbc:h2:mem:keenpay;DB_CLOSE_DELAY=-1}
-    username: ${KEENPAY_DB_USER:sa}
-    password: ${KEENPAY_DB_PASSWORD:}
+    url: ${SMSLAB_DB_URL:jdbc:h2:mem:smstxnlab;DB_CLOSE_DELAY=-1}
+    username: ${SMSLAB_DB_USER:sa}
+    password: ${SMSLAB_DB_PASSWORD:}
   flyway:
     enabled: true
   h2:
     console:
       enabled: false
 server:
-  address: ${KEENPAY_BIND_ADDRESS:127.0.0.1}
+  address: ${SMSLAB_BIND_ADDRESS:127.0.0.1}
 management:
   endpoints:
     web:
       exposure:
         include: health,info
-keenpay:
-  gateway-secret: ${KEENPAY_GATEWAY_SECRET:}
-  operator-key: ${KEENPAY_OPERATOR_KEY:}
+smstxnlab:
+  gateway-secret: ${SMSLAB_GATEWAY_SECRET:}
+  operator-key: ${SMSLAB_OPERATOR_KEY:}
   pending-minutes: 10

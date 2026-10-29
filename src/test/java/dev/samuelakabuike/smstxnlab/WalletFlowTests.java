@@ -1,4 +1,4 @@
-package dev.samuelakabuike.keenpay;
+package dev.samuelakabuike.smstxnlab;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-@SpringBootTest(properties = {"keenpay.gateway-secret=test-gateway-secret", "keenpay.operator-key=test-operator-key"})
+@SpringBootTest(properties = {"smstxnlab.gateway-secret=test-gateway-secret", "smstxnlab.operator-key=test-operator-key"})
 class WalletFlowTests {
     private static final Pattern REFERENCE = Pattern.compile("[0-9a-f]{8}-[0-9a-f-]{27,}");
 

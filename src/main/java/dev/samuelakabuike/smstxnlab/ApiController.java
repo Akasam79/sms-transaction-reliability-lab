@@ -1,4 +1,4 @@
-package dev.samuelakabuike.keenpay;
+package dev.samuelakabuike.smstxnlab;
 
 import tools.jackson.databind.ObjectMapper;
 import jakarta.validation.Valid;
@@ -36,9 +36,9 @@ public class ApiController {
     public record SmsOutput(String messageId, String reply) { }
 
     @PostMapping("/sms/inbound")
-    public SmsOutput receive(@RequestHeader("X-KeenPay-Timestamp") String timestamp,
-                             @RequestHeader("X-KeenPay-Message-Id") String messageId,
-                             @RequestHeader("X-KeenPay-Signature") String signature,
+    public SmsOutput receive(@RequestHeader("X-SmsLab-Timestamp") String timestamp,
+                             @RequestHeader("X-SmsLab-Message-Id") String messageId,
+                             @RequestHeader("X-SmsLab-Signature") String signature,
                              @RequestBody String raw) throws Exception {
         auth.verifyGateway(timestamp, messageId, signature, raw);
         SmsInput input = mapper.readValue(raw, SmsInput.class);
@@ -47,14 +47,14 @@ public class ApiController {
 
     @PostMapping("/simulation/accounts")
     @ResponseStatus(HttpStatus.CREATED)
-    public WalletService.AccountView register(@RequestHeader("X-KeenPay-Operator-Key") String key,
+    public WalletService.AccountView register(@RequestHeader("X-SmsLab-Operator-Key") String key,
                                               @Valid @RequestBody AccountInput input) {
         auth.verifyOperator(key);
         return wallets.register(input.phone(), input.role(), input.name(), input.pin());
     }
 
     @PostMapping("/simulation/fund")
-    public Map<String, String> fund(@RequestHeader("X-KeenPay-Operator-Key") String key,
+    public Map<String, String> fund(@RequestHeader("X-SmsLab-Operator-Key") String key,
                                     @Valid @RequestBody FundInput input) {
         auth.verifyOperator(key);
         long minor;

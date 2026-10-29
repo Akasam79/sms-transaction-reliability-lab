@@ -1,4 +1,4 @@
-package dev.samuelakabuike.keenpay;
+package dev.samuelakabuike.smstxnlab;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
@@ -30,7 +30,7 @@ public class WalletService {
     private final int pendingMinutes;
 
     public WalletService(JdbcTemplate jdbc, PasswordEncoder encoder, Clock clock,
-                         @Value("${keenpay.pending-minutes:10}") int pendingMinutes) {
+                         @Value("${smstxnlab.pending-minutes:10}") int pendingMinutes) {
         this.jdbc = jdbc;
         this.encoder = encoder;
         this.clock = clock;
